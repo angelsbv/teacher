@@ -2,12 +2,13 @@ const { Client, Intents, GuildMember } = require("discord.js");
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
+require('dotenv').config();
 
 const client = new Client({ intents: [Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILDS] });
 
 const guildId = '937505540479799376';
 const clientId = '945486422884884530';
-const token = 'OTQ1NDg2NDIyODg0ODg0NTMw.YhQ22Q.axAAPcBiU7XJSG_tQgvOGwwAGC8';
+const token = process.env.TOKEN;
 
 const commands = [
 	new SlashCommandBuilder().setName('muteall').setDescription('m'),
